@@ -23,9 +23,9 @@ const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const navigation = useNavigation();
 
-  const emailInputRef = useRef<TextInput>({null});
-  const whatsappInputRef = useRef<TextInput>({null});
-  const passwordInputRef = useRef<TextInput>({null});
+  const emailInputRef = useRef<TextInput>(null);
+  const whatsappInputRef = useRef<TextInput>(null);
+  const passwordInputRef = useRef<TextInput>(null);
 
   return (
     <>
@@ -51,7 +51,9 @@ const SignUp: React.FC = () => {
                 icon="user"
                 placeholder="Nome"
                 returnKeyType="next"
-                onSubmitEditing={() => {emailInputRef.current.focus()}}
+                onSubmitEditing={() => {
+                  emailInputRef.current?.focus();
+                }}
               />
               <Input
                 ref={emailInputRef}
@@ -62,7 +64,9 @@ const SignUp: React.FC = () => {
                 icon="mail"
                 placeholder="E-mail"
                 returnKeyType="next"
-                onSubmitEditing={() => {whatsappInputRef.current.focus()}}
+                onSubmitEditing={() => {
+                  whatsappInputRef.current?.focus();
+                }}
               />
               <Input
                 ref={whatsappInputRef}
@@ -73,7 +77,9 @@ const SignUp: React.FC = () => {
                 icon="phone"
                 placeholder="Whatsapp"
                 returnKeyType="next"
-                onSubmitEditing={() => {passwordInputRef.current.focus()}}
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus();
+                }}
               />
               <Input
                 ref={passwordInputRef}
